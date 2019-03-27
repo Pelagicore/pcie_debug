@@ -1,12 +1,8 @@
-ARMADEUS_BASE_DIR=../../../..
--include $(ARMADEUS_BASE_DIR)/Makefile.in
-
-CC:=$(ARMADEUS_TOOLCHAIN_PATH)/$(ARMADEUS_TOOLCHAIN_PREFIX)gcc
-CFLAGS = -Wall
-LDFLAGS += -lreadline -lcurses
-INSTALL_DIR = $(ARMADEUS_ROOTFS_DIR)/usr/bin/
-
+LDFLAGS += -lreadline
 default: pci_debug
-
 pci_debug: pci_debug.c
+
+.PHONY : clean
+clean :
+	 -rm pci_debug
 
